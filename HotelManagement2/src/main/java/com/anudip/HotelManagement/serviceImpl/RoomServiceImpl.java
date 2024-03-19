@@ -1,0 +1,44 @@
+package com.anudip.HotelManagement.serviceImpl;
+
+import java.util.List;
+
+import com.anudip.HotelManagement.entities.Room;
+import com.anudip.HotelManagement.service.RoomService;
+import com.anudip.HotelManagement.dao.RoomDao;
+import com.anudip.HotelManagement.daoImpl.RoomDaoImpl;
+
+public class RoomServiceImpl implements RoomService{
+	
+	RoomDao roomDao = new RoomDaoImpl();
+
+	@Override
+	public boolean saveRoom(Room room) {
+		
+		return roomDao.saveRoom(room);
+	}
+
+	@Override
+	public List<Room> getAllRooms() {
+		
+		return roomDao.getAllRooms();
+	}
+
+	@Override
+	public Room getRoomById(Long roomId) {
+		
+		return roomDao.getRoomById(roomId);
+	}
+
+	@Override
+	public boolean deleteRoom(Long roomId) {
+	
+		return roomDao.deleteRoom(roomId);
+	}
+
+	@Override
+	public List<Room> getRoomsByHotel(Long hotelId) {
+		
+		return roomDao.getRoomsByHotel(hotelId);
+	}
+
+}
